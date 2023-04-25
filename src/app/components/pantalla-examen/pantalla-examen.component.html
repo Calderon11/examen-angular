@@ -1,0 +1,28 @@
+<p-toast></p-toast>
+<h1>{{ title }}</h1>
+<h1>{{ nombre + ' ' + apellido }}</h1>
+
+<div class="card">
+    <div class="flex justify-content-center flex-wrap card-container">
+        <p-panel header="Lista de Pokemon">
+
+            <p-table [value]="listPokemon" [tableStyle]="{ 'min-width': '50rem' }"
+                [paginator]="true" [rows]="10" [showCurrentPageReport]="true" currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} registros"
+                [rowsPerPageOptions]="[10, 25, 50]">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>NAME</th>
+                        <th>URL</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-pokemon>
+                    <tr>
+                        <td>{{ pokemon.name }}</td>
+                        <td>{{ pokemon.url }}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </p-panel>
+    </div>
+</div>
+
